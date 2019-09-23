@@ -1,4 +1,4 @@
-module Step3 {
+module Step7 {
   interface Observer<T> {
     next(value: T): void;
     error(err: any): void;

@@ -1,4 +1,4 @@
-module Step3 {
+module Step9 {
   interface Observer<T> {
     next(value: T): void;
     error(err: any): void;
@@ -31,7 +31,7 @@ module Step3 {
     }
   }
 
-  
+
 
   class Observable<T> {
     constructor(private Init: (observer: Observer<T>) => Teardown) {}

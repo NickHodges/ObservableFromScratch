@@ -96,17 +96,20 @@ module Step13 {
       }
     }, 1000);
 
-    // resturn a basic teardown
+    // return a basic teardown
 
     return () => {
+      console.log('Tearing down!');
       clearInterval(id);
     };
   });
 
+  const double = (x: number) => (x * 2);
+
   const teardown = anObservable
     .pipe(
       map(x => x + 42),
-      map(x => x + 100)
+      map(double)
     )
     .subscribe({
       next(value: number) {
@@ -121,7 +124,6 @@ module Step13 {
     });
 
   setTimeout(() => {
-    console.log('Tearing down!');
     teardown.unsubscribe(); // This is now a Subscription
   }, 7000); // doesn't tear down right away.
 

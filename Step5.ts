@@ -15,7 +15,7 @@ module Step5 {
     };
   }
 
-  const teardown = anObservable({
+  const teardown = anObservable({  
     next(value: number) {
       console.log(value);
     },

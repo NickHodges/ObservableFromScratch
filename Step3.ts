@@ -12,6 +12,7 @@ module Step3 {
     observer.complete();
   }
 
+  // call the function with an implementation of the interface
   anObservable({
     next(value: number) {
       console.log(value);

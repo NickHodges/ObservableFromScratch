@@ -8,7 +8,7 @@ module Step9 {
   type Teardown = () => void;
 
   class Subscriber<T> implements Observer<T> {
-    closed: Boolean = false;
+    closed: Boolean = false; // flag to allow complete to work
 
     constructor(private destination: Observer<T>) {}
 
@@ -30,8 +30,6 @@ module Step9 {
       }
     }
   }
-
-
 
   class Observable<T> {
     constructor(private Init: (observer: Observer<T>) => Teardown) {}
@@ -56,6 +54,7 @@ module Step9 {
     // resturn a basic teardown
 
     return () => {
+      console.log('Tearing down!');
       clearInterval(id);
     };
   });
@@ -73,7 +72,6 @@ module Step9 {
   });
 
   setTimeout(() => {
-    console.log('Tearing down!');
     teardown();
   }, 7000); // doesn't tear down right away.
 }

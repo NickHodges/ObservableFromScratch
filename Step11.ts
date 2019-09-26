@@ -94,12 +94,14 @@ module Step11 {
 
     // resturn a basic teardown
     return () => {
+      console.log('Tearing down!');
       clearInterval(id);
     };
   });
 
   const teardown = anObservable
     .map(x => x + 42)
+    .map(x => x * 2)
     .subscribe({
       next(value: number) {
         console.log(value);
@@ -113,7 +115,6 @@ module Step11 {
     });
 
   setTimeout(() => {
-    console.log('Tearing down!');
     teardown.unsubscribe(); // This is now a Subscription
   }, 3200);
 }

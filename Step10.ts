@@ -76,6 +76,7 @@ module Step10 {
     // resturn a basic teardown
 
     return () => {
+      console.log('tearing down');
       clearInterval(id);
     };
   });
@@ -93,7 +94,6 @@ module Step10 {
   });
 
   setTimeout(() => {
-    console.log('Tearing down!');
     teardown.unsubscribe(); // This is now a Subscription
-  }, 7000); // doesn't tear down right away.
+  }, 7000); // should teardown despite this timer
 }

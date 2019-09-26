@@ -16,7 +16,7 @@ module Step3 {
     observer.next(2);
     observer.next(3);
     observer.complete();
-    observer.next(4);
+    observer.next(4);  // that call to complete was a lie!!
   }
 
   anObservable({

@@ -101,9 +101,10 @@ module Step12 {
       }
     }, 1000);
 
-    // resturn a basic teardown
+    // return a basic teardown
 
     return () => {
+      console.log('Tearing down!');
       clearInterval(id);
     };
   });
@@ -121,7 +122,6 @@ module Step12 {
   });
 
   setTimeout(() => {
-    console.log('Tearing down!');
     teardown.unsubscribe(); // This is now a Subscription
   }, 7000); // doesn't tear down right away.
 }

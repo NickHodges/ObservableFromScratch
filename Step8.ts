@@ -45,11 +45,11 @@ module Step8 {
       observer.next(i++);
       if (i > 3) {
         observer.complete();
-        observer.next(999999); // THis is still allowed
+        observer.next(999999); // This is still allowed
       }
     }, 1000);
 
-    // resturn a basic teardown
+    // return a basic teardown
 
     return () => {
       clearInterval(id);

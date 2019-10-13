@@ -25,7 +25,7 @@ module Step7 {
       }
     }, 1000);
 
-    // resturn a basic teardown
+    // return a basic teardown
 
     return () => {
       clearInterval(id);

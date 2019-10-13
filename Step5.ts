@@ -9,13 +9,13 @@ module Step5 {
     let i = 0;
     const id = setInterval(() => observer.next(i++), 1000);
 
-    // resturn a basic teardown
+    // return a basic teardown
     return () => {
       clearInterval(id);
     };
   }
 
-  const teardown = anObservable({  
+  const teardown = anObservable({
     next(value: number) {
       console.log(value);
     },

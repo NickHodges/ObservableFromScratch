@@ -51,7 +51,7 @@ module Step9 {
       }
     }, 1000);
 
-    // resturn a basic teardown
+    // return a basic teardown
 
     return () => {
       console.log('Tearing down!');

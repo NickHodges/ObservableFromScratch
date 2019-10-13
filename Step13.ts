@@ -125,7 +125,7 @@ module Step13 {
 
   setTimeout(() => {
     teardown.unsubscribe(); // This is now a Subscription
-  }, 7000); // doesn't tear down right away.
+  }, 5000); // doesn't tear down right away.
 
   function pipe(...functions: Array<(source: Observable<any>) => Observable<any>>) {
     return (source: Observable<any>) => functions.reduce((previous, aFunction) => aFunction(previous), source);

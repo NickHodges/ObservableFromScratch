@@ -16,8 +16,8 @@ module Step6 {
       }
     }, 1000);
 
-    // resturn a basic teardown
-    // but now there is not way to make sure that this
+    // return a basic teardown
+    // but now there is no way to make sure that this
     // happens if there is an error or complete is called
     return () => {
       clearInterval(id);

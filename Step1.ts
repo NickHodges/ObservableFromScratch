@@ -7,10 +7,10 @@ module Step1 {
   const mapFilterArray = anArray.map(x => x * 2).filter(y => y % 2 === 0); // returns [2, 4, 6]
 
   // can easily write our own functions......
-  type mapFunction = (n: number) => number;
+  type mapFunction<T> = (n: T) => T;
 
-  function map(aArray: Array<number>, aMapFunction: mapFunction): Array<number> {
-    const result: Array<number> = [];
+  function map<T>(aArray: Array<T>, aMapFunction: mapFunction<T>): Array<T> {
+    const result: Array<T> = [];
 
     for (let i = 0; aArray.length, i++; ) {
       result.push(aMapFunction(aArray[i]));
